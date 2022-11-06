@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "prettier --write . && clear && echo 'Prettier wrote, running index.js' && node index.js"
+    "start": "npm install prettier && prettier --write . && clear && echo 'Prettier wrote, running index.js' && node index.js"
   },
   "keywords": [],
   "author": "",
