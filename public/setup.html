@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Horizons Setup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: monospace;
+        padding: 32px;
+      }
+
+      button {
+        border-radius: 6px;
+        padding: 6px;
+        font-size: small;
+        backgrround-color: white;
+        color: black;
+        cursor: pointer;
+        border: none;
+      }
+
+      hr {
+        width: 50%;
+        margin-left: 0;
+      }
+
+      a {
+        color: white;
+      }
+    </style>
+    <h1>Horizons setup</h1>
+    <h3>
+      Want to connect to the server? Follow this guide. If you run into any
+      problems, <a href="https://discord.gg/EM9GWS4tfk">join the Discord</a>!
+    </h3>
+    <hr />
+    <h2>Finding your config.ini</h2>
+    <p>
+      The server you connect to is saved in a configuration file, and to change
+      that, you need to find the file!<br /><b>Windows:</b>
+    </p>
+    <ol>
+      <li>
+        Open Explorer and navigate to
+        <b>C:\Users\(user)\AppData\Local\IWM</b> (AppData is a hidden folder,
+        enable hidden folders!)
+      </li>
+      <li>Your config.ini will be there</li>
+    </ol>
+    <p><b>Linux:</b></p>
+    <ol>
+      <li>Open your file manager</li>
+      <li>
+        Navigate to <b>/home/(user)/.local/share/Steam/steamapps/compatdata</b>
+      </li>
+      <li>
+        Look through all the folders here until you find one with IWM in
+        <b>pfx/drive_c/users/steamuser/AppData/Local/</b> OR search for the
+        "IWM" folder
+      </li>
+      <li>Your config.ini file will be in threre</li>
+    </ol>
+    <br />
+    <h2>Changing the server (method 1)</h2>
+    <p>
+      Download the latest version of the
+      <a
+        href="https://github.com/codingMASTER398/IWM-Server-replacer/releases/tag/1.0-fix"
+        >IWM server replacer</a
+      >
+      for your operating system.<br />Run it (if on mac or linux do so via the
+      command line with ./app-name). Allow it to create a config file and give
+      it the location of your config.ini file.<br />Select option 2 and enter
+      <b>https://horizons.coding398.dev</b> with no slash at the end, then
+      select option 3 to save and exit.<br />Close and open I Wanna Maker.
+    </p>
+    <br />
+    <h2>Changing the server (method 2)</h2>
+    <p>
+      Open config.ini with a text editor and scroll down until you see
+      <b>Server_hostname</b> and <b>Server_hostname_fallback</b>.
+    </p>
+    <h3>
+      Replace both with exactly "https://horizons.coding398.dev", do not add a
+      http:// one.
+    </h3>
+    <p>Close and open I Wanna Maker.</p>
+    <br />
+    <h2>Check that it's working</h2>
+    <p>
+      When you enter the game, the amount of levels that show should be
+      different.<br />To be sure you're connected, enter a random login into the
+      prompt, and you should get a link to
+      <b>https://horizons.coding398.dev/login</b>.
+    </p>
+    <br />
+    <h2>Create an account and hop in!</h2>
+    <p>
+      Go to
+      <a href="https://horizons.coding398.dev/login" target="_blank"
+        >horizons.coding398.dev/login</a
+      >
+      and log-in with your Discord account.<br />You'll be given a username and
+      password you can use in-game to log in!<br />Once you're in, you can start
+      playing with no rules!
+    </p>
+    <br />
+    <h2>Cross-compatibility with the main server</h2>
+    <p>
+      To save you hassle, you can connect to the main server via Horizons!<br />Just
+      log out and log in with the credentials to your official IWM server
+      account.<br /><b
+        >The proxy used will also make it look like everyone, including you, has
+        admin!</b
+      >
+      You can get special perks with that little trick.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Horizons Hats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: monospace;
+        padding: 32px;
+      }
+
+      button {
+        border-radius: 6px;
+        padding: 6px;
+        font-size: small;
+        backgrround-color: white;
+        color: black;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+    <h1>Horizon Hats</h1>
+    <p>
+      Get cool hats in-game with this handy dandy tool! These aren't available
+      in the official server for non-admins.
+    </p>
+    <br />
+    <label for="username">Horizons Username:</label><br />
+    <input type="text" id="username" name="username" /><br />
+    <br />
+    <label for="pass">Horizons Password:</label><br />
+    <input type="password" id="pass" name="pass" /><br />
+    <br />
+    <label for="hat">Hat:</label>
+    <select id="hat" name="hat">
+      <option value="3">Water Bowl (for the first 10 users)</option>
+      <option value="35">Cat (for the furries)</option>
+      <option value="33">Crown (for contributors)</option>
+      <option value="28">Cherry (complete XSAG-0ZPM)</option>
+      <option value="13">Leek RGB (complete VBEJ-L6RV)</option>
+      <option value="34">Ribbon (complete PO7L-ZJT2)</option>
+      <option value="41">Devil horns (complete V393-R8OG)</option>
+      <option value="45">Kamilia</option>
+      <option value="47">Crusher</option>
+    </select>
+    <br /><br />
+    <button onclick="go()">Change hats!</button>
+    <p id="out"></p>
+
+    <script>
+      let out = document.getElementById(`out`);
+
+      const hatLevels = {
+        XSAG0ZPM: 28, // Cherry
+        VBEJL6RV: 13, // Leek
+        PO7LZJT2: 34, // Ribbon
+        V393R8OG: 41, // Devil horns
+      };
+
+      function go() {
+        let username = document.getElementById("username").value;
+        let pass = document.getElementById("pass").value;
+        let hat = document.getElementById(`hat`).value;
+
+        out.innerText = `Please wait...`;
+
+        fetch(`/customHat/${hat}`, {
+          method: "post",
+          headers: new Headers({
+            Authorization: `${username}:${pass}`,
+          }),
+        }).then(async (r) => {
+          if (r.status == 200) {
+            out.innerText = `Applied! Check in-game.`;
+          } else {
+            out.innerText = await r.text();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
