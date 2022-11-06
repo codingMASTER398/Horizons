@@ -27,6 +27,8 @@ Limits can be configured
 - More fun!
 
 # Setup
+**This program best runs on Replit. [Create a Replit account here](https://join.replit.com/lachie).**
+
 Create a MongoDB atlas database and a Discord client with identify permissions and a redirect URI.
 
 In .env:
