@@ -19,14 +19,13 @@
         padding: 32px;
       }
 
-      button {
-        border-radius: 6px;
+      .button {
+        border-radius: 3px;
         padding: 6px;
         font-size: small;
-        backgrround-color: white;
-        color: black;
-        cursor: pointer;
-        border: none;
+        color: lime;
+        border: 2px solid green;
+        text-decoration: none;
       }
 
       a {
@@ -44,11 +43,11 @@
       <a href="/setup">setup instructions</a> to get started in an all-new,
       wacky server with absolutely no rules!
     </p>
-    <button onclick="window.open('/setup')">Setup</button>
-    <button onclick="window.open('/login')">Get login</button>
-    <button onclick="window.open('/hats')">Special hats</button>
-    <button onclick="window.open('https://discord.gg/EM9GWS4tfk')">
+    <a target="_blank" class='button' href="/setup">Setup</a>
+    <a target="_blank" class='button' href="/login">Get login</a>
+    <a target="_blank" class="button" href="/hats">Special hats</a>
+    <a target="_blank" class='button' href="https://discord.gg/EM9GWS4tfk">
       Join the Discord
-    </button>
+    </a>
   </body>
 </html>
