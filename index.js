@@ -840,7 +840,9 @@ app.get(`/api/v1/map/:id`, async (req, res) => {
   req.params.id = Number(req.params.id);
   try {
     let m = await maps.findOne({ ID: req.params.id });
-
+    m.BestFullTimeUserID = 0
+    m.BestFullTimePlaytime = 0
+    m.BestFullTimeUsername = 0
     if (m) {
       m = await mapUserDetails(m);
       res.json(m);
@@ -856,7 +858,9 @@ app.get(`/api/v1/map/:id`, async (req, res) => {
 app.post(`/api/v1/map/:id/start`, async (req, res) => {
   req.params.id = Number(req.params.id);
   let m = await maps.findOne({ ID: req.params.id });
-
+  m.BestFullTimeUserID = 0
+  m.BestFullTimePlaytime = 0
+  m.BestFullTimeUsername = 0
   if (m) {
     res.json({
       Rating: m.AverageRating,
