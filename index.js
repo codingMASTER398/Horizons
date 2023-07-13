@@ -3,7 +3,7 @@ const utils = require("./utils");
 const fetch = require(`node-fetch`); // Install as @2
 
 // CONFIG
-const clientVersion = 0.7882;
+const clientVersion = 0.902;
 let realIWM = [];
 
 // IWM-API
@@ -683,6 +683,11 @@ function mapUserDetails(map, enableBanned = false) {
     map.Played = true;
     map.Clear = true;
     map.FullClear = true;
+    map.BestFullTimeUserID = 0
+    map.BestFullTimeUsername = ""
+    map.BestFullTimePlaytime = 2147483647
+    map.ReplayVisibility = 0
+
     if (map.ClearCount < 5) map.ClearCount = 5;
     if (map.AverageUserDifficulty <= 0) map.AverageUserDifficulty = 0.1;
 
